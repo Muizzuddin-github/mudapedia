@@ -27,6 +27,15 @@
 - **Response - 400:** `{ message: "Invalid password"}`
 - **Response - 500:** `{ message : error.message}`
 
+### Logout Admin
+- **Endpoint:** `/api/admin/logout`
+- **Method:** `POST`
+- **Controller:** `adminController.logoutAdmin`
+- **Description:** Logout for admin.
+- **Request:** `username, password`
+- **Response - 200:** `{ message: "Logout successful"}`
+- **Response - 500:** `{ message : error.message}`
+
 ### Dashboard
 - **Endpoint:** `/api/admin/dashboard`
 - **Method:** `GET`
@@ -59,6 +68,8 @@
   - `authJwt.isAdmin`
 - **Controller:** `adminController.getContent`
 - **Description:** Get all content in the admin dashboard.
+- **Query.offset:** `offset`
+- **Limit:** `20`
 - **Response - 200:** `Content json`
 - **Response - 400:** `{ message: "Content not found"}`
 - **Response - 500:** `{ message : error.message}`
