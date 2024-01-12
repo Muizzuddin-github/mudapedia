@@ -22,6 +22,12 @@ adminRoute.post(
     adminController.loginAdmin
 );
 
+// logout admin
+adminRoute.post(
+    '/logout',
+    adminController.logoutAdmin
+);
+
 // dashboard
 adminRoute.get(
     '/dashboard',
