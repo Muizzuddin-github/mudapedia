@@ -6,7 +6,7 @@ import Content from "../model/content.schema.js";
 
 const adminController = {
     test : async (req, res) => {
-        res.send({ message: "Hello from admin controller"});
+        res.status(200).send({ message: "Hello from admin controller"});
     },
     registerAdmin : async (req, res) => {
         try {
@@ -22,9 +22,9 @@ const adminController = {
                 return res.status(400).send({ message: "Admin not created"});
             }
 
-            res.send({ message: "Admin created successfully" })
+            res.status(200).send({ message: "Admin created successfully" })
         } catch (error) {
-            res.send({ message : error.message})
+            res.status(500).send({ message : error.message})
         }
     },
     loginAdmin : async (req, res) => {
@@ -55,16 +55,16 @@ const adminController = {
                 sameSite: "none",
             });
 
-            res.json({ message: "Login successful", id: admin._id });
+            res.status(200).json({ message: "Login successful", id: admin._id });
         } catch (error) {
-            res.send({ message : error.message})
+            res.status(500).send({ message : error.message})
         }
     },
     dashboard : async (req, res) => {
         try {
-            res.send({ message: "Hello from admin dashboard"});
+            res.status(200).send({ message: "Hello from admin dashboard"});
         } catch (error) {
-            res.send({ message : error.message})
+            res.status(500).send({ message : error.message})
         }
     },
     createContent : async (req, res) => {
@@ -78,9 +78,9 @@ const adminController = {
                 return res.status(400).send({ message: "Content not created"});
             }
 
-            res.send({ message: "Content created successfully", idContent: result._id});
+            res.status(200).send({ message: "Content created successfully", idContent: result._id});
         } catch (error) {
-            res.send({ message : error.message})
+            res.status(500).send({ message : error.message})
         }
     },
     getContent : async (req, res) => {
@@ -92,9 +92,9 @@ const adminController = {
                 return res.status(400).send({ message: "Content not found"});
             }
 
-            res.send(content);
+            res.status(200).send(content);
         } catch (error) {
-            res.send({ message : error.message})
+            res.status(500).send({ message : error.message})
         }
     },
     updateContent : async (req, res) => {
@@ -111,11 +111,10 @@ const adminController = {
             if (!content) {
                 return res.status(400).send({ message: "Content not found"});
             }
-            console.log(content);
 
-            res.send({ message: "Content updated successfully"});
+            res.status(200).send({ message: "Content updated successfully"});
         } catch (error) {
-            res.send({ message : error.message})
+            res.status(500).send({ message : error.message})
         }
     },
     deleteContent : async (req, res) => {
@@ -128,9 +127,9 @@ const adminController = {
                 return res.status(400).send({ message: "Content not found"});
             }
 
-            res.send({ message: "Content deleted successfully"});
+            res.status(200).send({ message: "Content deleted successfully"});
         } catch (error) {
-            res.send({ message : error.message})
+            res.status(500).send({ message : error.message})
         }
     }
 }
