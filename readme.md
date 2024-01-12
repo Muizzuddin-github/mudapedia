@@ -3,14 +3,14 @@
 ## Admin Routes
 
 ### Test Route
-- **Endpoint:** `/admin/test`
+- **Endpoint:** `/api//admin/test`
 - **Method:** `GET`
 - **Controller:** `adminController.test`
 - **Description:** Test endpoint for admin.
 - **Response - 200:** `{message: "Hello from admin controller"}`
 
 ### Register Admin
-- **Endpoint:** `/admin/register`
+- **Endpoint:** `/api/admin/register`
 - **Method:** `POST`
 - **Controller:** `adminController.registerAdmin`
 - **Description:** Register a new admin.
@@ -18,7 +18,7 @@
 - **Response - 200:** `{ message: "Admin created successfully" }`
 
 ### Login Admin
-- **Endpoint:** `/admin/login`
+- **Endpoint:** `/api/admin/login`
 - **Method:** `POST`
 - **Controller:** `adminController.loginAdmin`
 - **Description:** Login for admin.
@@ -28,7 +28,7 @@
 - **Response - 500:** `{ message : error.message}`
 
 ### Dashboard
-- **Endpoint:** `/admin/dashboard`
+- **Endpoint:** `/api/admin/dashboard`
 - **Method:** `GET`
 - **Middleware:**
   - `authJwt.verifyToken`
@@ -39,7 +39,7 @@
 - **Response - 500:** `{ message : error.message}`
 
 ### Create Content
-- **Endpoint:** `/admin/dashboard/content`
+- **Endpoint:** `/api/admin/dashboard/content`
 - **Method:** `POST`
 - **Middleware:**
   - `authJwt.verifyToken`
@@ -52,7 +52,7 @@
 - **Response - 500:** `{ message : error.message}`
 
 ### Get Content
-- **Endpoint:** `/admin/dashboard/content`
+- **Endpoint:** `/api/admin/dashboard/content`
 - **Method:** `GET`
 - **Middleware:**
   - `authJwt.verifyToken`
@@ -64,7 +64,7 @@
 - **Response - 500:** `{ message : error.message}`
 
 ### Update Content
-- **Endpoint:** `/admin/dashboard/content/:id`
+- **Endpoint:** `/api/admin/dashboard/content/:id`
 - **Method:** `PUT`
 - **Middleware:**
   - `authJwt.verifyToken`
@@ -78,7 +78,7 @@
 - **Response - 500:** `{ message : error.message}`
 
 ### Delete Content
-- **Endpoint:** `/admin/dashboard/content/:id`
+- **Endpoint:** `/api/admin/dashboard/content/:id`
 - **Method:** `DELETE`
 - **Middleware:**
   - `authJwt.verifyToken`
@@ -94,7 +94,7 @@
 ## User Routes
 
 ### Get Content
-- **Endpoint:** `/user/content`
+- **Endpoint:** `/api/user/content`
 - **Method:** `GET`
 - **Controller:** `adminController.getContent`
 - **Description:** Get content for regular users.
