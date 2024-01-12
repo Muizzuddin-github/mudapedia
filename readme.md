@@ -91,7 +91,7 @@
 - **Response - 400:** `{ message: "Content not found"}`
 - **Response - 500:** `{ message : error.message}`
 
-## User Routes
+## User Route
 
 ### Get Content
 - **Endpoint:** `/api/user/content`
