@@ -60,6 +60,14 @@ const adminController = {
             res.status(500).send({ message : error.message})
         }
     },
+    logoutAdmin : async (req, res) => {
+        try {
+            res.clearCookie("token");
+            res.status(200).send({ message: "Logout successful"});
+        } catch (error) {
+            res.status(500).send({ message : error.message})
+        }
+    },
     dashboard : async (req, res) => {
         try {
             res.status(200).send({ message: "Hello from admin dashboard"});
