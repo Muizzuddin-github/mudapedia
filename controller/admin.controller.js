@@ -73,7 +73,7 @@ const adminController = {
                 return res.status(400).send({ message: "Content not created"});
             }
 
-            res.send({ message: "Content created successfully"});
+            res.send({ message: "Content created successfully", idContent: result._id});
         } catch (error) {
             res.send({ message : error.message})
         }
