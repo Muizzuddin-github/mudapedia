@@ -3,7 +3,7 @@
 ## Admin Routes
 
 ### Test Route
-- **Endpoint:** `/api//admin/test`
+- **Endpoint:** `/api/admin/test`
 - **Method:** `GET`
 - **Controller:** `adminController.test`
 - **Description:** Test endpoint for admin.
