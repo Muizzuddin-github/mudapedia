@@ -30,11 +30,16 @@ const adminController = {
     loginAdmin : async (req, res) => {
         try {
             const { username, password } = req.body;
-            const admin = await Admin.findOne({ username });
+            const admin = await Admin.findOne({ username: username });
+            
+            if (username !== admin?.username) {
+                return res.status(400).send({ message: "Invalid username or password"});
+            }
+
             const validPassword = await bcrypt.compare(password, admin.password);
 
             if (!validPassword) {
-                return res.status(400).send({ message: "Invalid password"});
+                return res.status(400).send({ message: "Invalid password or password"});
             }
 
             const token = jwt.sign({ adminId: admin.id }, process.env.SECRET_KEY, {
