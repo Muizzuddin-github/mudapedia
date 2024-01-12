@@ -80,6 +80,7 @@ const adminController = {
     },
     getContent : async (req, res) => {
         try {
+            const offset = req.query;
             const content = await Content.find();
 
             if (!content) {

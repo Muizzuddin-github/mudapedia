@@ -1,4 +1,4 @@
-import Express  from "express";
+import Express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
@@ -20,11 +20,15 @@ const app = Express();
 app.use(Express.json());
 app.use(Express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(cors({origin:"*"}));
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "http://localhost:3000"],
+    credentials: true,
+  })
+);
 
 // route
-app.use("/api/admin", adminRoute)
-app.use("/api/user", userRoute)
-
+app.use("/api/admin", adminRoute);
+app.use("/api/user", userRoute);
 
 export default app;
