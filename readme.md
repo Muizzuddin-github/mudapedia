@@ -68,7 +68,7 @@
   - `authJwt.isAdmin`
 - **Controller:** `adminController.getContent`
 - **Description:** Get all content in the admin dashboard.
-- **Query.offset:** `offset`
+- **Query:** `offset, limit`
 - **Limit:** `20`
 - **Response - 200:** `Content json`
 - **Response - 400:** `{ message: "Content not found"}`
