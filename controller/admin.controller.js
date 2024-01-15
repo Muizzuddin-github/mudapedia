@@ -99,7 +99,7 @@ const adminController = {
     getContent : async (req, res) => {
         try {
             const { offset, limit } = req.query
-            const content = await Content.find().limit(limit).sort({ createdAt: -1 }).skip(offset);
+            const content = await Content.find().limit(limit).skip(offset);
 
             if (!content) {
                 return res.status(400).send({ message: "Content not found"});
