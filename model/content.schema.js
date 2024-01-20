@@ -4,7 +4,8 @@ const schemaContent = mongoose.Schema({
     title : {
         type : String,
         required : true,
-        min : 3
+        min : 3,
+        unique : true
     },
     thumbnail : {
         type : String,

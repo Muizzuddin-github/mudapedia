@@ -49,6 +49,13 @@ adminRoute.get(
     adminController.getContent
 )
 
+// get content by id
+adminRoute.get(
+    '/dashboard/content/:id',
+    [authJwt.verifyToken, authJwt.isAdmin],
+    adminController.getContentById
+)
+
 // update content
 adminRoute.put(
     '/dashboard/content/:id',

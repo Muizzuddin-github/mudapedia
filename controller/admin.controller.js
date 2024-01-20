@@ -122,6 +122,18 @@ const adminController = {
       res.status(500).send({ message: error.message });
     }
   },
+  getContentById: async (req, res) => {
+    try {
+      const { id } = req.params;
+      const content = await Content.findById(id);
+      if(!content){
+        return res.status(400).json({ message : "content not found"})
+      }
+      res.status(200).json(content)
+    } catch (error) {
+      res.status(500).json({ meesage: error.message })
+    }
+  },
   updateContent: async (req, res) => {
     try {
       const id = req.params.id;
