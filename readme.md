@@ -74,6 +74,19 @@
 - **Response - 400:** `{ message: "Content not found"}`
 - **Response - 500:** `{ message : error.message}`
 
+### Get Content By Id
+- **Endpoint:** `/api/admin/dashboard/content/:id`
+- **Method:** `GET`
+- **Middleware:**
+  - `authJwt.verifyToken`
+  - `authJwt.isAdmin`
+- **Controller:** `adminController.getContent`
+- **Description:** Get all content in the admin dashboard.
+- **Parameter:** id content
+- **Response - 200:** `Content json`
+- **Response - 400:** `{ message: "Content not found"}`
+- **Response - 500:** `{ message : error.message}`
+
 ### Update Content
 - **Endpoint:** `/api/admin/dashboard/content/:id`
 - **Method:** `PUT`
@@ -109,6 +122,16 @@
 - **Method:** `GET`
 - **Controller:** `adminController.getContent`
 - **Description:** Get content for regular users.
+- **Response - 200:** `Content json`
+- **Response - 400:** `{ message: "Content not found"}`
+- **Response - 500:** `{ message : error.message}`
+
+### Get Content
+- **Endpoint:** `/api/user/content/:id`
+- **Method:** `GET`
+- **Controller:** `adminController.getContentById`
+- **Description:** Get spesific content for regular users.
+- **Parameter:** id content
 - **Response - 200:** `Content json`
 - **Response - 400:** `{ message: "Content not found"}`
 - **Response - 500:** `{ message : error.message}`

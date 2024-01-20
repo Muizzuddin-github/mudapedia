@@ -9,4 +9,9 @@ userRoute.get(
     adminController.getContent
 );
 
+userRoute.get(
+    '/content/:id',
+    adminController.getContentById
+)
+
 export default userRoute;
