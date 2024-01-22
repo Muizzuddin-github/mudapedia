@@ -12,6 +12,11 @@ userRoute.get(
 userRoute.get(
     '/content/:id',
     adminController.getContentById
-)
+);
+
+userRoute.get(
+    '/pagenation',
+    adminController.getContentPagenation
+);
 
 export default userRoute;
