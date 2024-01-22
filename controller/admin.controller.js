@@ -169,6 +169,27 @@ const adminController = {
       res.status(500).send({ message: error.message });
     }
   },
+  getContentPagenation: async (req, res) => {
+    try {
+      const { page, limit } = req.query;
+      const content = await Content.find()
+        .limit(limit * 1)
+        .skip((page - 1) * limit)
+        .exec();
+      const count = await Content.countDocuments();
+      if (!content) {
+        return res.status(400).send({ message: "Content not found" });
+      }
+
+      res.status(200).send({
+        content,
+        totalPages: Math.ceil(count / limit),
+        currentPage: page,
+      });
+    } catch (error) {
+      res.status(500).send({ message: error.message });
+    }
+  }
 };
 
 export default adminController;
