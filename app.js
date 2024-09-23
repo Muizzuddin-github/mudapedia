@@ -20,17 +20,7 @@ const app = Express();
 app.use(Express.json());
 app.use(Express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173",
-      "http://localhost:3000",
-      "https://muda-pedia.vercel.app",
-      "https://mudapedia.my.id",
-    ],
-    credentials: true,
-  })
-);
+app.use(cors());
 
 // route
 app.use("/api/admin", adminRoute);
